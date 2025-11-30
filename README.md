@@ -37,4 +37,8 @@ When you start guiding such a model with init images and prompts, it is best to 
 * CLIP
 * kornia
 * opencv (needed by postprocessing)
-* gradio  
+* gradio
+
+## compatibility with urdiffusion
+
+Xurdif should be downwards compatible with models trained on urdiffusion. To ensure compatibility copy the contents of alt_models folder (in your urdiffusion installation or from urdiffusion repo) into the alt_models folder of your xurdif installation.
