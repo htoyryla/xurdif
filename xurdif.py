@@ -4,7 +4,7 @@
 
 xurdiffusion
 
-@htoyryla June 2023, 2025
+@htoyryla 2023 - 2025
 
 diffusion library with support for DDIM with conditioning
 
