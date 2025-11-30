@@ -1,5 +1,8 @@
 # xurdif
+
 a compact diffusion model trained with small, private datasets
+
+## what is xurdif
 
 This repo is essentially an updated and compact version of my urdiffusion (see https://github.com/htoyryla/urdiffusion)
 
