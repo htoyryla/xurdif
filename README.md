@@ -42,3 +42,30 @@ When you start guiding such a model with init images and prompts, it is best to 
 ## compatibility with urdiffusion
 
 Xurdif should be downwards compatible with models trained on urdiffusion. To ensure compatibility copy the contents of alt_models folder (in your urdiffusion installation or from urdiffusion repo) into the alt_models folder of your xurdif installation.
+
+## Get some models
+
+Go to https://www.dropbox.com/scl/fo/flh4pczukrrlb3ar1rfuc/AAT22M2b21Tf1yKe3Ji0HS0?rlkey=f1zdhexy36p3hffcun686m77c&dl=0 and copy the files into the models folder
+
+## Run gradio app
+
+To run the gradio app
+
+```
+python xurdifapp.py 
+```
+
+## To train a model
+
+```
+python xurdiftrainer.py --images path_to_your_image_files --steps 1000 --trainstep 280000 --accum 10 --dir path_for_storing_checkpoints --imageSize 512 --batchSize 8 --saveEvery 100 --nsamples 2 --model tinyunet_with_attention3 --losstype l1 --ssimw 0 --lr 4e-4 --mults 1 2 2 2 --pred x0
+```
+
+The image path should point directly to the folder containing to the image files. Subfolders are not scanned.
+
+The above command will resize the training images to the imageSize (512px), forcing to square if necessary. Alternatively use --fit crop so that random crops of 512x512px are used.
+
+Look at the terminal output for training progress, usually the loss should decrease quite fast at the beginning. Later on the loss may not decrease anymore but the image quality typically still improves.
+
+In the checkpoint folder you will see both the saved model files as well as sample output from each stored model file. You can the copy selected models into your models folder... just rename them into something meaningful so that you will be able to differentiate between different models in the gradio app.
+
