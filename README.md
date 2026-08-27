@@ -77,6 +77,10 @@ Added new files instead of committing them as new versions:
 xurdiftrainer2b.py: 
 * supports edge aware loss for learning noisy or edgy images
 * masked training... appears to learn faster or better
+* usage example:
+```
+python xurdiftrainer2b.py --images <path_to_train_images> --steps 1000 --trainstep 280000 --accum 10 --dir <output_folder> --imageSize 512   --batchSize 8 --saveEvery 100 --nsamples 2 --model tinyunet_with_attention3 --lr 5e-5 --losstype l1 --mults 1 2 4 4 8 --pred x0 --use_mask  --fit crop --rot --flip --use_edges [--load <model_path_for_resume>]
+```
 
 xurdif2.py:
 * basic diffusion library needed for the new trainer
