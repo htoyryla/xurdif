@@ -426,7 +426,7 @@ if os.path.isdir(opt.image):
       # skip non-images
       ext = fname.split('.')[-1].lower()
       imgname = fname.split('.')[0].lower()
-      print(imgname, ext)
+      #print(imgname, ext)
       if not ext in ['jpg', 'jpeg', 'png', 'tiff', 'tif']:
         continue
         
@@ -444,7 +444,7 @@ elif opt.image == "":
 else:     
     inputlist = [opt.image]
 
-print(opt.image, inputlist)    
+#print(opt.image, inputlist)    
     
 timesteps = get_timesteps(opt.skip)['timesteps']    
 
