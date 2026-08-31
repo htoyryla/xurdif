@@ -108,10 +108,11 @@ Training:
 python xurdiftrainer26b.py  --images <path_to_train_images>  --steps 1000 --trainsteps 280000 --accum 10 --dir <output_folder> --imageSize 512 --batchSize 8 --saveEvery 100 --nsamples 2 --model tinyunet_conf_attention --attn=-1:linear,mid:full --lr 4e-4  --losstype l1 --use_edges --use_mask --mults 1 2 2 4 4 --pred x0
 ```
 Examples of attn config:
-mid:full             full attention at bottleneck, original architecture
--1:linear,mid:full   full attention at bottleneck, linear attention at one level up
--1:linear,mid:linear  linear attention at bottleneck, linear attention at one level up
-
+```
+mid:full              # full attention at bottleneck, original architecture
+-1:linear,mid:full    # full attention at bottleneck, linear attention at one level up
+-1:linear,mid:linear  # linear attention at bottleneck, linear attention at one level up
+```
 Generation:
 
 ```
